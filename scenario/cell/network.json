@@ -6,7 +6,7 @@
                 "delay": "100 ms"
             },
             "transmission": {
-                "lossProbability": 0.2,
+                "lossProbability": 0.9,
                 "maxRetries": 2
             },
             "capacity": 28000000
@@ -18,7 +18,7 @@
                     "delay": "100 ms"
                 },
                 "transmission": {
-                    "lossProbability": 0.2,
+                    "lossProbability": 0.9,
                     "maxRetries": 2
                 }
             },
@@ -28,9 +28,9 @@
                     "delay": "100 ms"
                 },
                 "transmission": {
-                    "lossProbability": 0.2
+                    "lossProbability": 0.9
                 },
-                "usableCapacity": 0.6
+                "usableCapacity": 1
             },
             "capacity": 42200000
         }

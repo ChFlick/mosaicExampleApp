@@ -1,6 +1,8 @@
 <configuration>
 	<input>
 		<net-file value="emission.net.xml" />
+		<route-files value="emission.rou.xml" />
+        <additional-files value="emission.add.xml" />
 	</input>
 	<time>
 		<begin value="0" />

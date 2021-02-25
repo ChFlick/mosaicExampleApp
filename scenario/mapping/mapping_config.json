@@ -37,24 +37,6 @@
                     "applications": [ "EmissionOutputApp" ]
                 }
             ]
-        },
-        {
-            "startingTime": 1.0,
-            "targetFlow": 1000,
-            "maxNumberVehicles": 50,
-            "route": "1",
-            "lanes": [ 0 ],
-            "types": [
-                {
-                    "name": "Car",
-                    "weight": 80
-                },
-                {
-                    "name": "Car",
-                    "weight": 20,
-                    "applications": []
-                }
-            ]
         }
     ]
 }

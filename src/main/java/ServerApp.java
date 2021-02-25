@@ -14,8 +14,13 @@ import org.eclipse.mosaic.lib.util.scheduling.Event;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ServerApp extends AbstractApplication<OperatingSystem> implements CommunicationApplication {
+    private final List<EmissionMessage> receivedMessages = new ArrayList<>();
+
     @Override
     public void onStartup() {
         getOs().getCellModule().enable();
@@ -25,6 +30,18 @@ public class ServerApp extends AbstractApplication<OperatingSystem> implements C
     @Override
     public void onShutdown() {
         getLog().info("Shutting down");
+        getLog().info("Received Messages Total: {}", receivedMessages.size());
+        getLog().info("Average emission values:");
+        getLog().info("CO: {} mg/s", receivedMessages.stream().map(it -> it.getEmissions().getCo())
+                                                .collect(Collectors.averagingDouble(it -> it)));
+        getLog().info("CO2: {} mg/s", receivedMessages.stream().map(it -> it.getEmissions().getCo2())
+                                                .collect(Collectors.averagingDouble(it -> it)));
+        getLog().info("PMx: {} mg/s", receivedMessages.stream().map(it -> it.getEmissions().getPmx())
+                                                .collect(Collectors.averagingDouble(it -> it)));
+        getLog().info("NMx: {} mg/s", receivedMessages.stream().map(it -> it.getEmissions().getNox())
+                                                .collect(Collectors.averagingDouble(it -> it)));
+        getLog().info("HC: {} mg/s", receivedMessages.stream().map(it -> it.getEmissions().getHc())
+                                                .collect(Collectors.averagingDouble(it -> it)));
     }
 
     @Override
@@ -34,6 +51,9 @@ public class ServerApp extends AbstractApplication<OperatingSystem> implements C
     @Override
     public void onMessageReceived(ReceivedV2xMessage receivedV2xMessage) {
         getLog().info("Received Message {}", receivedV2xMessage.getMessage());
+        if (receivedV2xMessage.getMessage() instanceof EmissionMessage) {
+            receivedMessages.add((EmissionMessage) receivedV2xMessage.getMessage());
+        }
     }
 
     @Override
