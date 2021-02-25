@@ -34,7 +34,7 @@
                 {
                     "name": "Car",
                     "weight": 20,
-                    "applications": [ "FuelConsumptionApp" ]
+                    "applications": [ "EmissionOutputApp" ]
                 }
             ]
         },

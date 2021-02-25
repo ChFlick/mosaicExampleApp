@@ -1,6 +1,6 @@
 <configuration>
 	<input>
-		<net-file value="fuel.net.xml" />
+		<net-file value="emission.net.xml" />
 	</input>
 	<time>
 		<begin value="0" />

@@ -6,7 +6,7 @@
                 "delay": "100 ms"
             },
             "transmission": {
-                "lossProbability": 0.0,
+                "lossProbability": 0.2,
                 "maxRetries": 2
             },
             "capacity": 28000000
@@ -18,7 +18,7 @@
                     "delay": "100 ms"
                 },
                 "transmission": {
-                    "lossProbability": 0.0,
+                    "lossProbability": 0.2,
                     "maxRetries": 2
                 }
             },
@@ -28,7 +28,7 @@
                     "delay": "100 ms"
                 },
                 "transmission": {
-                    "lossProbability": 0.0
+                    "lossProbability": 0.2
                 },
                 "usableCapacity": 0.6
             },
@@ -44,7 +44,7 @@
                     "delay": "200 ms"
                 },
                 "transmission": {
-                    "lossProbability": 0.5,
+                    "lossProbability": 0.2,
                     "maxRetries": 2
                 }
             },
@@ -57,7 +57,7 @@
                         "maxDelay": "200 ms"
                     },
                     "transmission": {
-                        "lossProbability": 0.1,
+                        "lossProbability": 0.2,
                         "maxRetries": 2
                     }
                 }
